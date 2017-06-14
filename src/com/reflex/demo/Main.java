@@ -99,6 +99,7 @@ public class Main {
         Class<?> class1 = null;
         class1 = Class.forName("com.reflex.demo.Person");
         //由于这里不能带参数，所以你要实例化的这个类Person，一定要有无参构造函数哈～
+        // newInstance 具体说明：https://zhidao.baidu.com/question/648809159916550885.html
         Person person = (Person) class1.newInstance();
         person.setAge(20);
         person.setName("LeeFeng");
@@ -150,7 +151,8 @@ public class Main {
         Class<?> class1 = null;
         class1 = Class.forName("com.reflex.demo.Person");
         Object obj = class1.newInstance();
-
+//        getDeclaredField是可以获取一个类的所有字段属性.
+//        getField只能获取类的public 字段.
         Field personNameField = class1.getDeclaredField("name");
         personNameField.setAccessible(true);
         personNameField.set(obj, "胖虎先森");
