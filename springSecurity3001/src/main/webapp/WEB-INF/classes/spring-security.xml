@@ -21,9 +21,17 @@
 
         -->
         <security:intercept-url pattern="/product/index" access="permitAll()"/>
+        <security:intercept-url pattern="/userLogin" access="permitAll()"/>
         <security:intercept-url pattern="/**" access="isFullyAuthenticated()"/>
+
         <!--<security:http-basic/>-->
-        <security:form-login/>
+        <!--
+       login-page: 自定义登录页面
+        login-processing-url:登录请求地址
+        -->
+        <security:form-login login-page="/userLogin" login-processing-url="/securityLogin"/>
+        <!-- 关闭Spring Security CSRF机制 -->
+        <security:csrf disabled="true"/>
     </security:http>
     <!--
        security:authentication-manager： 认证管理器
