@@ -13,3 +13,5 @@
   解决方法：在idea中把applicationContext.xml复制到/WEB-INF/classes的文件下就OK了  
   [跟着学习8](https://www.bilibili.com/video/av50613863/?p=8&t=101) 
 
+  * 2019/5/10 看到了L13在security里配置固定的user role权限，打开对应的页面
+  [跟着学习13](https://www.bilibili.com/video/av50613863/?p=13) 
