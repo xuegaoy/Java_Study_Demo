@@ -16,4 +16,13 @@ public class MainController {
     public String login() {
         return "login";
     }
+
+    /**
+     * 错误页面
+     * @return
+     */
+    @RequestMapping("/error")
+    public String error(){
+        return "error";
+    }
 }
