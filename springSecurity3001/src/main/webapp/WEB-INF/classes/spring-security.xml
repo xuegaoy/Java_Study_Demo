@@ -33,7 +33,10 @@
        login-page: 自定义登录页面
         login-processing-url:登录请求地址
         -->
-        <security:form-login login-page="/userLogin" login-processing-url="/securityLogin" default-target-url="/product/index"/>
+        <security:form-login login-page="/userLogin" login-processing-url="/securityLogin"
+                             default-target-url="/product/index"
+                             authentication-success-handler-ref="myAuthenticationSuccessHandler"
+                             authentication-failure-handler-ref="myAuthenticationFailureHandler"/>
         <!-- 自定义权限不足处理 -->
         <security:access-denied-handler error-page="/error"/>
         <!-- 关闭Spring Security CSRF机制 -->
@@ -56,4 +59,8 @@
         </security:authentication-provider>
     </security:authentication-manager>
     <bean id="MyUserDetailService" class="com.sarariman.security.MyUserDetailService" />
+
+    <bean id="myAuthenticationSuccessHandler" class="com.sarariman.security.MyAuthenticationSuccessHandler"/>
+
+    <bean id="myAuthenticationFailureHandler" class="com.sarariman.security.MyAuthenticationFailureHandler"/>
 </beans>
