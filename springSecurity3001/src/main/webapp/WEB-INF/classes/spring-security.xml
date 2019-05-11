@@ -44,11 +44,16 @@
             1）认证信息提供方式（账户名，密码，当前用户权限）
     -->
     <security:authentication-manager>
-        <security:authentication-provider>
+        <!--  硬编码UserDetailService方式-->
+        <!--<security:authentication-provider>
             <security:user-service>
                 <security:user name="man" password="1234" authorities="ROLE_USER"/>
                 <security:user name="frank" password="1234" authorities="ROLE_ADMIN"/>
             </security:user-service>
+        </security:authentication-provider>-->
+        <!--  自定义UserDetailService方式-->
+        <security:authentication-provider user-service-ref="MyUserDetailService">
         </security:authentication-provider>
     </security:authentication-manager>
+    <bean id="MyUserDetailService" class="com.sarariman.security.MyUserDetailService" />
 </beans>
