@@ -15,3 +15,6 @@
 
   * 2019/5/10 看到了L13在security里配置固定的user role权限，打开对应的页面
   [跟着学习13](https://www.bilibili.com/video/av50613863/?p=13) 
+  * 2019/5/11 看到了L13在security里配置自定义的user role权限，打开对应的页面--分支l14selfdefauth
+  [跟着学习14](https://www.bilibili.com/video/av50613863/?p=14) 
+  
