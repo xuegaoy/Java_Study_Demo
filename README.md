@@ -21,4 +21,5 @@
 ### springsecurityssm-- 
   * 2019/5/12 创建ssm分支,内容为：用户权限通过DB取得
   * 2019/5/13 异步登录处理，也就是前台将数据以json格式传给后台处理;security.xml里设定了异步处理bean
+  [跟着学习27](https://www.bilibili.com/video/av50613863/?p=27)
   
