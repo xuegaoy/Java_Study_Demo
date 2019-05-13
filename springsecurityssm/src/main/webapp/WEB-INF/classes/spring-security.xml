@@ -14,9 +14,10 @@
 
         <security:intercept-url pattern="/userLogin" access="permitAll()"/>
         <security:intercept-url pattern="/product/index" access="permitAll()"/>
+        <security:intercept-url pattern="/js/**" access="permitAll()"/>
         <security:intercept-url pattern="/**" access="isFullyAuthenticated()"/>
 
-        <security:form-login login-page="/userLogin"/>
+        <security:form-login login-page="/userLogin" authentication-success-handler-ref="myAuthenticationnSuccessHandler" authentication-failure-handler-ref="myAuthenticationFailureHandler"/>
         <!-- 权限不足处理 -->
         <security:access-denied-handler error-page="/error"/>
         <security:csrf disabled="true"/>
@@ -37,4 +38,7 @@
 
     <bean id="myUserDetailSerivce" class="cn.sarariman.security.MyUserDetailService"/>
 
+    <bean id="myAuthenticationnSuccessHandler" class="cn.sarariman.security.MyAuthenticationnSuccessHandler"/>
+
+    <bean id="myAuthenticationFailureHandler" class="cn.sarariman.security.MyAuthenticationFailureHandler" />
 </beans>
