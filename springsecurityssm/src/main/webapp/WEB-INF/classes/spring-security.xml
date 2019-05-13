@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+            http://www.springframework.org/schema/security
+            http://www.springframework.org/schema/security/spring-security-4.2.xsd">
+    <security:http>
+        <!-- 拦截资源 -->
+        <security:intercept-url pattern="/product/list" access="hasAnyAuthority('ROLE_LIST_PRODUCT')"/>
+        <security:intercept-url pattern="/product/add" access="hasAnyAuthority('ROLE_ADD_PRODUCT')"/>
+        <security:intercept-url pattern="/product/update" access="hasAnyAuthority('ROLE_UPDATE_PRODUCT')"/>
+        <security:intercept-url pattern="/product/delete" access="hasAnyAuthority('ROLE_DELETE_PRODUCT')"/>
+
+        <security:intercept-url pattern="/userLogin" access="permitAll()"/>
+        <security:intercept-url pattern="/product/index" access="permitAll()"/>
+        <security:intercept-url pattern="/**" access="isFullyAuthenticated()"/>
+
+        <security:form-login login-page="/userLogin"/>
+        <!-- 权限不足处理 -->
+        <security:access-denied-handler error-page="/error"/>
+        <security:csrf disabled="true"/>
+    </security:http>
+
+    <security:authentication-manager>
+        <!-- <security:authentication-provider>
+             <security:user-service>
+                 <security:user name="frank" password="1234" authorities="ROLE_USER"/>
+             </security:user-service>
+         </security:authentication-provider>-->
+        <security:authentication-provider user-service-ref="myUserDetailSerivce">
+            <!--使用加密算法对用户输入的密码进入加密，然后和数据库的密码进行配对 -->
+            <!--<security:password-encoder ref="passwordEncoder"/>-->
+        </security:authentication-provider>
+
+    </security:authentication-manager>
+
+    <bean id="myUserDetailSerivce" class="cn.sarariman.security.MyUserDetailService"/>
+
+</beans>
