@@ -16,4 +16,9 @@ public interface UserMapper {
      */
     public List<Permission> findPermissionByUsername(String username);
 
+    /**
+     * 修改密码
+     */
+    public void updatePassword(User user);
+
 }
