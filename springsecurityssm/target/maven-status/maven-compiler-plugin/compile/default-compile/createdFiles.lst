@@ -1,8 +1,10 @@
 cn\sarariman\security\MyAuthenticationFailureHandler.class
 cn\sarariman\security\MyUserDetailService.class
 cn\sarariman\domain\Role.class
+cn\sarariman\security\ImageCodeException.class
 cn\sarariman\domain\Permission.class
 cn\sarariman\mapper\UserMapper.class
+cn\sarariman\security\ImageCodeAuthenticationFilter.class
 cn\sarariman\controller\ProductController.class
 cn\sarariman\domain\User.class
 cn\sarariman\controller\MainController.class

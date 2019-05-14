@@ -13,6 +13,7 @@
 <form method="post" id="loginForm" >
     用户名:<input type="text" name="username"/><br/>
     密码:<input type="password" name="password"/><br/>
+    验证码:<input type="text" name="imageCode"/><img src="${pageContext.request.contextPath}/imageCode"/><br/>
     <input type="button" id="loginBtn" value="登录"/>
 </form>
 

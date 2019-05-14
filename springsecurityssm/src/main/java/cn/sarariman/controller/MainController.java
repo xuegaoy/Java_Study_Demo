@@ -25,4 +25,12 @@ public class MainController {
     public String error(){
         return "error";
     }
+
+    /**
+     * 生成验证码
+     */
+    @RequestMapping("/imageCode")
+    public String imageCode(){
+        return "imageCode";
+    }
 }

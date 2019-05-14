@@ -15,7 +15,11 @@
         <security:intercept-url pattern="/userLogin" access="permitAll()"/>
         <security:intercept-url pattern="/product/index" access="permitAll()"/>
         <security:intercept-url pattern="/js/**" access="permitAll()"/>
+        <security:intercept-url pattern="/imageCode*" access="permitAll()"/>
         <security:intercept-url pattern="/**" access="isFullyAuthenticated()"/>
+
+        <!-- 自定义Spring Security过滤器 -->
+        <security:custom-filter ref="imageCodeAuthenticationFilter" before="FORM_LOGIN_FILTER"/>
 
         <security:form-login login-page="/userLogin" authentication-success-handler-ref="myAuthenticationnSuccessHandler" authentication-failure-handler-ref="myAuthenticationFailureHandler"/>
         <!-- 权限不足处理 -->
@@ -43,4 +47,9 @@
     <bean id="myAuthenticationFailureHandler" class="cn.sarariman.security.MyAuthenticationFailureHandler" />
 
     <bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+
+    <bean id="imageCodeAuthenticationFilter" class="cn.sarariman.security.ImageCodeAuthenticationFilter">
+        <property name="authenticationFailureHandler" ref="myAuthenticationFailureHandler"/>
+    </bean>
+
 </beans>
