@@ -26,4 +26,8 @@
   [跟着学习28](https://www.bilibili.com/video/av50613863/?p=28)
   -- 
   [跟着学习31](https://www.bilibili.com/video/av50613863/?p=32)
+  * 2019/5/15 追加security tag功能 [分支ssm](https://github.com/yaom2018/Java_Study_Demo/tree/ssmsecuritytaguse)
+    利用security自带属性，显示用户名
+
+
   
