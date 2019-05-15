@@ -27,3 +27,9 @@
   -- 
   [跟着学习31](https://www.bilibili.com/video/av50613863/?p=32)
   
+  
+### springboot security--  
+  * 2019/5/15 粗略的做了一springboot security配置
+  [分支](https://github.com/yaom2018/Java_Study_Demo/tree/securitySpringBoot/springbootsecurity)
+  [视频](https://www.bilibili.com/video/av50613863/?p=35)
+  
