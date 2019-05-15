@@ -2,8 +2,8 @@
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 <html>
 <body>
-<h2>Hello World!</h2>
-网站功能：<br/>
+欢迎用户，${username}<br/>
+以下是网站的功能：<br/>
 <security:authorize access="hasAuthority('ROLE_ADD_PRODUCT')">
 <a href="${pageContext.request.contextPath}/product/add">product add</a><br/>
 </security:authorize>
